@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route } from "react-router-dom"
+import Sidebar from './components/Sidebar';
+import Watchlist from './components/Watchlist';
+import Wishlist from './components/Wishlist';
+import BucketList from './components/Bucketlist';
+import JobsApplied from './components/JobsApplied';
+import Freesites from './components/Freesites';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="app-container">
+        <Sidebar />
+        <div className="content">
+          <Routes>
+            <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/bucketlist" element={<BucketList />} />
+            <Route path="/jobs-applied" element={<JobsApplied />} />
+            <Route path='free-sites' element={<Freesites />} />
+            <Route exact path="/" element={<Watchlist />} /> {/* Default page */}
+          </Routes>
+        </div>
+      </div>
   );
-}
+};
 
 export default App;

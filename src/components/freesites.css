@@ -1,0 +1,86 @@
+.freesites-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .freesites-input-section {
+    margin-bottom: 20px;
+  }
+  
+  .freesites-input-section input {
+    width: 45%;
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .freesites-input-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(90deg, #ff7a18, #af002d);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .freesites-input-section button:hover {
+    background: linear-gradient(90deg, #af002d, #ff7a18);
+  }
+  
+  .sites-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .site-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    text-transform: capitalize;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .site-button:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+  }
+  
+  .site-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .site-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .site-actions button:first-child {
+    background-color: #ffc107;
+    color: #fff;
+  }
+  
+  .site-actions button:first-child:hover {
+    background-color: #e0a800;
+  }
+  
+  .site-actions button:last-child {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .site-actions button:last-child:hover {
+    background-color: #c82333;
+  }
