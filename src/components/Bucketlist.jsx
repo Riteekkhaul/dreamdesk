@@ -19,7 +19,7 @@ const Bucketlist = () => {
   useEffect(() => {
     const fetchBucketlist = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/bucketlist');
+        const response = await axios.get('https://dreamdeskserver.onrender.com/api/bucketlist');
         setBucketlist(response.data);
       } catch (error) {
         console.error('Error fetching bucket list:', error);
@@ -47,7 +47,7 @@ const Bucketlist = () => {
     try {
       if (editIndex !== null) {
         // Update item
-        const response = await axios.put(`http://localhost:5000/api/bucketlist/${editId}`, inputData);
+        const response = await axios.put(`https://dreamdeskserver.onrender.com/api/bucketlist/${editId}`, inputData);
 
         const updatedBucketlist = [...bucketlist];
         updatedBucketlist[editIndex] = response.data;
@@ -57,7 +57,7 @@ const Bucketlist = () => {
         setEditId(null);
       } else {
         // Add new item
-        const response = await axios.post('http://localhost:5000/api/bucketlist', inputData);
+        const response = await axios.post('https://dreamdeskserver.onrender.com/api/bucketlist', inputData);
         setBucketlist([...bucketlist, response.data]);
       }
 
@@ -75,7 +75,7 @@ const Bucketlist = () => {
 
   const handleDeleteItem = async (id, index) => {
     try {
-      await axios.delete(`http://localhost:5000/api/bucketlist/${id}`);
+      await axios.delete(`https://dreamdeskserver.onrender.com/api/bucketlist/${id}`);
       const updatedBucketlist = bucketlist.filter((_, i) => i !== index);
       setBucketlist(updatedBucketlist);
     } catch (error) {

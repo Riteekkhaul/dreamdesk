@@ -20,7 +20,7 @@ const JobsApplied = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/jobs');
+        const response = await axios.get('https://dreamdeskserver.onrender.com/api/jobs');
         setJobList(response.data);
       } catch (error) {
         console.error('Error fetching jobs:', error);
@@ -48,7 +48,7 @@ const JobsApplied = () => {
     try {
       if (editIndex !== null) {
         // Update job
-        const response = await axios.put(`http://localhost:5000/api/jobs/${editId}`, inputData);
+        const response = await axios.put(`https://dreamdeskserver.onrender.com/api/jobs/${editId}`, inputData);
 
         const updatedJobList = [...jobList];
         updatedJobList[editIndex] = response.data;
@@ -58,7 +58,7 @@ const JobsApplied = () => {
         setEditId(null);
       } else {
         // Add new job
-        const response = await axios.post('http://localhost:5000/api/jobs', inputData);
+        const response = await axios.post('https://dreamdeskserver.onrender.com/api/jobs', inputData);
         setJobList([...jobList, response.data]);
       }
 
@@ -76,7 +76,7 @@ const JobsApplied = () => {
 
   const handleDeleteJob = async (id, index) => {
     try {
-      await axios.delete(`http://localhost:5000/api/jobs/${id}`);
+      await axios.delete(`https://dreamdeskserver.onrender.com/api/jobs/${id}`);
       const updatedJobList = jobList.filter((_, i) => i !== index);
       setJobList(updatedJobList);
     } catch (error) {

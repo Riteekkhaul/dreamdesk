@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './freesites.css';
 
-const API_BASE_URL = 'http://localhost:5000/api/sites';
+const API_BASE_URL = 'https://dreamdeskserver.onrender.com/api/sites';
 
 const Freesites = () => {
   const [sites, setSites] = useState([]);

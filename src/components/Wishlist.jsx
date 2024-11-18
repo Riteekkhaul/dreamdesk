@@ -19,7 +19,7 @@ const Wishlist = () => {
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/wishlist');
+        const response = await axios.get('https://dreamdeskserver.onrender.com/api/wishlist');
         setWishlist(response.data);
       } catch (error) {
         console.error('Error fetching wishlist:', error);
@@ -47,7 +47,7 @@ const Wishlist = () => {
     try {
       if (editIndex !== null) {
         // Update item
-        const response = await axios.put(`http://localhost:5000/api/wishlist/${editId}`, inputData);
+        const response = await axios.put(`https://dreamdeskserver.onrender.com/api/wishlist/${editId}`, inputData);
         const updatedWishlist = [...wishlist];
         updatedWishlist[editIndex] = response.data;
 
@@ -56,7 +56,7 @@ const Wishlist = () => {
         setEditId(null);
       } else {
         // Add new item
-        const response = await axios.post('http://localhost:5000/api/wishlist', inputData);
+        const response = await axios.post('https://dreamdeskserver.onrender.com/api/wishlist', inputData);
         setWishlist([...wishlist, response.data]);
       }
 
@@ -74,7 +74,7 @@ const Wishlist = () => {
 
   const handleDeleteItem = async (id, index) => {
     try {
-      await axios.delete(`http://localhost:5000/api/wishlist/${id}`);
+      await axios.delete(`https://dreamdeskserver.onrender.com/api/wishlist/${id}`);
       const updatedWishlist = wishlist.filter((_, i) => i !== index);
       setWishlist(updatedWishlist);
     } catch (error) {

@@ -12,7 +12,7 @@ const Watchlist = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/watchlist`);
+        const response = await axios.get(`https://dreamdeskserver.onrender.com/api/watchlist`);
         setItems(response.data);
       } catch (error) {
         console.error('Error fetching items:', error);
@@ -33,14 +33,14 @@ const Watchlist = () => {
     try {
       if (editId !== null) {
         // Update item
-        const response = await axios.put(`http://localhost:5000/api/watchlist/${editId}`, { ...input, category: activeTab });
+        const response = await axios.put(`https://dreamdeskserver.onrender.com/api/watchlist/${editId}`, { ...input, category: activeTab });
         setItems((prevItems) =>
           prevItems.map((item) => (item._id === editId ? response.data : item))
         );
         setEditId(null);
       } else {
         // Add new item
-        const response = await axios.post('http://localhost:5000/api/watchlist', { ...input, category: activeTab });
+        const response = await axios.post('https://dreamdeskserver.onrender.com/api/watchlist', { ...input, category: activeTab });
         setItems([...items, response.data]);
       }
 
@@ -60,7 +60,7 @@ const Watchlist = () => {
 
   const handleDeleteItem = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/watchlist/${id}`);
+      await axios.delete(`https://dreamdeskserver.onrender.com/api/watchlist/${id}`);
       setItems((prevItems) => prevItems.filter((item) => item._id !== id));
     } catch (error) {
       console.error('Error deleting item:', error);
